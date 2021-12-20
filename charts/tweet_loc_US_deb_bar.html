@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.8.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"grid": false}}, "data": {"name": "data-dcd114a4fc8daf7afc95acc49ad409bb"}, "mark": {"type": "bar", "size": 25}, "encoding": {"color": {"type": "quantitative", "field": "size", "legend": {"title": "Count"}}, "tooltip": [{"type": "quantitative", "field": "size"}, {"type": "nominal", "field": "full_name"}], "x": {"type": "nominal", "field": "full_name", "sort": "-y", "title": "Location"}, "y": {"type": "quantitative", "field": "size", "title": "Count of Tweets"}}, "height": 300, "title": "#GND Tweet Locations in the US post-debate", "width": 500, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-dcd114a4fc8daf7afc95acc49ad409bb": [{"full_name": "Los Angeles, CA", "size": 14}, {"full_name": "Brooklyn, NY", "size": 12}, {"full_name": "Washington, DC", "size": 9}, {"full_name": "Nashville, TN", "size": 9}, {"full_name": "Phoenix, AZ", "size": 7}, {"full_name": "Queens, NY", "size": 7}, {"full_name": "Topeka, KS", "size": 6}, {"full_name": "San Francisco, CA", "size": 6}, {"full_name": "Portland, OR", "size": 5}, {"full_name": "Boulder, CO", "size": 4}, {"full_name": "Texas, USA", "size": 4}, {"full_name": "Las Vegas, NV", "size": 4}, {"full_name": "New York, USA", "size": 4}, {"full_name": "Philadelphia, PA", "size": 4}, {"full_name": "Boston, MA", "size": 4}, {"full_name": "Arkansas, USA", "size": 3}, {"full_name": "Santa Monica, CA", "size": 3}, {"full_name": "Houston, TX", "size": 3}, {"full_name": "Manhattan, NY", "size": 3}, {"full_name": "Indiana, USA", "size": 3}, {"full_name": "Seattle, WA", "size": 3}, {"full_name": "Michigan, USA", "size": 3}, {"full_name": "Chicago, IL", "size": 3}, {"full_name": "Claremont, NH", "size": 3}, {"full_name": "Pennsylvania, USA", "size": 3}, {"full_name": "Lost Creek, TX", "size": 3}, {"full_name": "Flagler Beach, FL", "size": 2}, {"full_name": "Arizona, USA", "size": 2}, {"full_name": "Colorado, USA", "size": 2}, {"full_name": "East Port Orchard, WA", "size": 2}, {"full_name": "Ballston Lake, NY", "size": 2}, {"full_name": "Yuma, AZ", "size": 2}, {"full_name": "Florida, USA", "size": 2}, {"full_name": "Riverside, CA", "size": 2}, {"full_name": "South Carolina, USA", "size": 2}, {"full_name": "Pinole, CA", "size": 2}, {"full_name": "Miami, FL", "size": 2}, {"full_name": "Thousand Oaks, CA", "size": 2}, {"full_name": "Vermont, USA", "size": 2}, {"full_name": "San Antonio, TX", "size": 2}, {"full_name": "Massachusetts, USA", "size": 2}, {"full_name": "San Diego, CA", "size": 2}, {"full_name": "Georgia, USA", "size": 2}, {"full_name": "Manchester, NH", "size": 2}, {"full_name": "Harwich Center, MA", "size": 2}, {"full_name": "Hoover, AL", "size": 2}, {"full_name": "Manchester, WA", "size": 2}, {"full_name": "Castle Hills, TX", "size": 2}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

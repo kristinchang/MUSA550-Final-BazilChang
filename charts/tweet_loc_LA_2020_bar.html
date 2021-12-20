@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.8.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"grid": false}}, "data": {"name": "data-66e100c282572d5e8a8858d6ae5c8fd9"}, "mark": {"type": "bar", "size": 30}, "encoding": {"color": {"type": "quantitative", "field": "size", "legend": {"title": "Count"}}, "tooltip": [{"type": "quantitative", "field": "size"}, {"type": "nominal", "field": "full_name"}], "x": {"type": "nominal", "field": "full_name", "scale": {"zero": false}, "sort": "-y", "title": "Location"}, "y": {"type": "quantitative", "field": "size", "scale": {"zero": false}, "title": "Count of Tweets"}}, "height": 300, "title": "#GND Tweet Locations in LA in 2020", "width": 500, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-66e100c282572d5e8a8858d6ae5c8fd9": [{"full_name": "Castell\u00f3n de la Plana, Spain", "size": 5}, {"full_name": "La Crosse, WI", "size": 1}, {"full_name": "La Grange, NY", "size": 1}, {"full_name": "La Spezia, Liguria", "size": 2}, {"full_name": "Larose, LA", "size": 54}, {"full_name": "New Orleans, LA", "size": 11}, {"full_name": "Palau de la Generalitat de Catalunya", "size": 2}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.8.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-4dd2263af498f4b7b9b2309cbd0c364b"}, "mark": {"type": "bar", "size": 25}, "encoding": {"color": {"type": "quantitative", "field": "size"}, "tooltip": [{"type": "quantitative", "field": "size"}, {"type": "nominal", "field": "date"}], "x": {"type": "nominal", "field": "date", "scale": {"zero": false}}, "y": {"type": "quantitative", "field": "size", "scale": {"zero": false}}}, "height": 300, "title": "#GND Tweet Counts Post-Debate", "width": 500, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-4dd2263af498f4b7b9b2309cbd0c364b": [{"date": "2020-09-28", "size": 519}, {"date": "2020-09-29", "size": 490}, {"date": "2020-09-30", "size": 2939}, {"date": "2020-10-01", "size": 779}, {"date": "2020-10-02", "size": 449}, {"date": "2020-10-03", "size": 435}, {"date": "2020-10-04", "size": 428}, {"date": "2020-10-05", "size": 551}, {"date": "2020-10-06", "size": 570}, {"date": "2020-10-07", "size": 567}, {"date": "2020-10-08", "size": 2774}, {"date": "2020-10-09", "size": 650}, {"date": "2020-10-10", "size": 492}, {"date": "2020-10-11", "size": 434}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
