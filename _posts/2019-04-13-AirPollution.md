@@ -21,10 +21,3 @@ The chart below shows the number of days each parish in Louisiana had an ozone l
 This chart is the same as above, but for the Pm 2.5 Contaminant level for each parish:
 
 <div id="hv-chart-2"></div>
-
-These charts were produced using hvplot and holoviews and embedded in this static web page. The following python code is replicable for any air pollutant data available in this format:
-
-```python
-import altair as alt
-alt.renderers.enable('notebook')
-```
