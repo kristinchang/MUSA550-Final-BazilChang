@@ -1,0 +1,23 @@
+---
+title: "Air Pollution in Louisiana 2001-2014"
+date: 2021-12-15
+published: true
+tags: [dataviz, hvplot, holoviews]
+hv-loader:
+  hv-chart-1: ["charts/ozHvplot2.html", "250"] # second argument is the height
+  hv-chart-2: ["charts/pmHvplot2.html", "250"]
+toc: true
+toc_sticky: true
+---
+
+## Ozone Contaminant
+
+The chart below shows the number of days each parish in Louisiana had an ozone level that was above the regulatory standard, from 2001-2014:
+
+<div id="hv-chart-1"></div>
+
+## Pm 2.5 Contaminant
+
+This chart is the same as above, but for the Pm 2.5 Contaminant level for each parish:
+
+<div id="hv-chart-2"></div>
