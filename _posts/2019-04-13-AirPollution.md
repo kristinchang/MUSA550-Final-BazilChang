@@ -4,8 +4,8 @@ date: 2021-12-15
 published: true
 tags: [dataviz, hvplot, holoviews]
 hv-loader:
-  hv-chart-1: ["charts/ozHvplot2.html", "700"] # second argument is the height
-  hv-chart-2: ["charts/pmHvplot2.html", "700"]
+  hv-chart-1: ["charts/ozHvplot2.html", "600"] # second argument is the height
+  hv-chart-2: ["charts/pmHvplot2.html", "600"]
 toc: true
 toc_sticky: true
 ---
