@@ -4,7 +4,8 @@ date: 2021-12-15
 published: true
 tags: [dataviz, hvplot, holoviews]
 hv-loader:
-  hv-chart-1: ["charts/", "600"] # second argument is the height
+  hv-chart-1: ["charts/fossil_inf.html", "600"] # second argument is the height
+  hv-chart-2: ["charts/dashboard_vf.html", "600"]
 toc: true
 toc_sticky: true
 ---
@@ -20,6 +21,6 @@ The map below shows the main fossil fuel production infrastructures in Louisiana
 
 The dashboard below shows the number of days each parish in Louisiana had an ozone level that was above the regulatory standard in 2014, linked with a table displaying the petrolem refinery capacity per parish. Clicking on a parish on the map will highlight the relevant refinery capacity at that location. Unsurprisingly, the areas with high refinery capacity also experience poor air quality more frequently.
 
-<div id="hv-chart-1"></div>
+<div id="hv-chart-2"></div>
 
 
