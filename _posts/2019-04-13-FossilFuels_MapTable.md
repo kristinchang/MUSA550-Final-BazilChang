@@ -1,5 +1,5 @@
 ---
-title: "Spatial Analysis of Oil Refineries and Cancer Cases"
+title: "Spatial Analysis of Fossil Fuel Infrastructure and Air Pollution"
 date: 2021-12-15
 published: true
 tags: [dataviz, hvplot, holoviews]
