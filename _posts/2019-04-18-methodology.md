@@ -11,15 +11,14 @@ tags:
 The following describes the methods used to produce each Green New Deal analysis tool.
 
 **Air Pollution over Time(2001-2014) Visualization**
-* Data
+
+Data
 
 We downloaded a csv of ozone and pm2.5 contaminants data from the [Louisiana Department of Health portal](https://healthdata.ldh.la.gov/). We also downloaded parish geo data from the Louisiana Department of Transportation. Then, we cleaned the data by simplifying columns and renaming and converting the datatype of primary and foreign key columns to match to be joined. We converted both dataframes from wide to long form. We also converted the year column to a datetime object and extracted just the year for a clean year column.
 
 * Spatial Joins
 
-We then merged both the to the parish dataframe separately. Finally, we
-  - trimmed to the most recent 6 years so the file would be the appropriate size for github pages. 
-  - Projected both dataframes in crs 4326. 
+We then merged both the to the parish dataframe separately. Finally, we trimmed to the most recent 6 years so the file would be the appropriate size for github pages and projected both dataframes in crs 4326. 
 
 
 * Visualizations
