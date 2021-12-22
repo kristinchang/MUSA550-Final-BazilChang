@@ -5,7 +5,7 @@ published: true
 tags: [dataviz, hvplot, holoviews]
 hv-loader:
   hv-chart-1: ["charts/fossil_inf.html", "600"] # second argument is the height
-  hv-chart-2: ["charts/dashboard_vf.html", "600"]
+  hv-chart-2: ["charts/dashboard_oneCol.html", "600"]
 toc: true
 toc_sticky: true
 ---
