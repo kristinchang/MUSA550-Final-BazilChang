@@ -42,3 +42,33 @@ We use data link to combine the choropleth map of ozone contamination by parish 
   - We save and both visualizations as HTML.
 
 **Senitment Analysis: #GreenNewDeal**
+
+For the Twitter analysis, we applied for the Academic Use API and were successful in upgrading our developer account. We initialized the API with our credentials and conducted numerous queries, only a few of which made it into our final analysis. Each query filtered for the hashtag “green new deal” and removed retweets from the search.
+
+For the non-geo located tweets, we filtered by start time and end time to control the date range of the information returned. We then created a data frame and made a datetime column. We outline the process for three separate analyses below:
+
+Daily Count of Tweets following the Debate
+The query we used is all tweets that used the Green New Deal Hashtag in the two weeks following the 2020 Presidential debate on September 29th, 2020. We then create a datetime index from the ‘created_at’ field and use this to group by date to get a daily count of tweets. We convert to a string and plot with Altair. The result is an interactive chart that shows a huge spike in tweets about the Green New Deal the day after the debate—confirming our theory that we would get more data about the GND during this time frame. We export to html. 
+
+Location of GND Tweets in Louisiana in 2020
+This query adds in ‘place:LA’ to filter for tweets that are geo coded in Louisiana. Because there are so few tweets that are geocoded, we expand the timeframe to be the entire year of 2020. We follow the same steps to create a dataframe and extract out the place ID as a column of its own. We then convert this place dict to a dataframe. Finally, we merge the place data frame back to the query results. We have 76 geo tweets in total. This allows us to group by the name of the location and get a count of tweets per location in Louisiana. As you can see from the results, there are some inconsistent geo locations included despite the geo filter. However, the majority of located tweets are in Larose and New Orleans. We again plot the count of tweets using Altair and export to HTML. 
+
+Location of GND Tweets in the US in the 2 weeks post Debate
+This query adds in ‘place_country:US’ to filter for tweets that are geo coded in the United States during the 2 weeks following the climate change debate. We have 269 tweets with locations in this data set after following the same methodology as above. Of these 269 tweets, 14 come from LA and 12 from Brooklyn. This indicates that the discussion of the GND is occurring in larger, progressive cities and not in areas like Louisiana that have a greater need for climate change policies. We again plot the count of tweets and export to HTML. 
+
+Text Analysis of GND Tweets in the 2 weeks post Debate
+
+We return to the first query of all GND tweets in the 2 weeks following the debate to have a large sample size for our text analysis. This yields 12,094 tweets. 
+
+Word Counts
+We then use tweet.text to extract the text and perform many cleaning operations such as removing URLs, extracting only lower case words, removing stop words and punctuation, and removing the search term. After only removing ‘#greennewdeal’ initially, we add #greennewdeal.',, 'green', 'new', '#GreenNewDeal' as well. This yields a final word count for frequently used words—the top word is ‘@joebiden’ with almost 1,600 tweets using it. Second is ‘#medicareforall’, and ‘support’. This would indicate a generally positive overall opinion of the GND. We plot the count of tweets and export to HTML.
+
+Sentiment Analysis
+We use TextBlob to perform a sentiment analysis of this same set of tweets. We remove the URL, and create a number of fields and a dataframe. We create date, text, polarity, and subjectivity—the final two being derived from textblob. We then remove the tweets that are unbiased (have a polarity of 0) which comes to 4819 tweets removed. 
+
+The median post-debate polarity is 0.125 (on a scale of negative one to one) indicating a slightly positive skew to the discussion surrounding the GND. The median subjectivity is .497 (on a scale of zero to one) indicating that the subjectivity skews lower. 
+
+We plot a histogram of both the polarity and subjectivity and export as pngs. We then plot subjectivity and polarity against each other, and observe the trend that as subjectivity increases, so does polarity in both directions. That is, as the tweets get more and more subjective, they are also either most positive or more negative. This trend makes sense given the charged nature of the Green New Deal. 
+
+Finally, we extract the hour of the day from the date field using the datetime function. We use this to group the biased tweets by the hour of the day and generate a box and whiskers plot of polarity for each hour. Polarity skews negative around 1am and 3am. We export to png. 
+
